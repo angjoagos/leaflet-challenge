@@ -46,9 +46,9 @@
             });
     
     // Loop through the points and add markers with dynamically adjusted size
-    for (var i = 0; i < point.mag; i++) {
+    for (var i = 0; i < properties.mag; i++) {
         var point = points [i];
-        var marker = L.marker([point.latitude, point.longitude]).addTo(map);
+        var marker = L.marker([geometry.latitude, geometry.longitude]).addTo(map);
         
         // Calculate the marker size based on the 'size' attribute
         var markerSize = point.mag;
@@ -63,7 +63,7 @@
         marker.setIcon(customIcon);
 
         // Add a popup with the point's name
-        marker.bindPopup(point.place);
+        marker.bindPopup(properties.place);
     }
     </script>
 </body>
